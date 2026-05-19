@@ -1,0 +1,103 @@
+.timeline { position: relative; max-width: 780px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  bottom: 20px;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+}
+
+.timelineItem {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.timelineDot {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.dotIcon { font-size: 16px; }
+
+.card { flex: 1; }
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.period {
+  font-family: var(--font-display);
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.degree {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 6px;
+}
+
+.institution {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.gpaBox {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 22px;
+  border: 1px solid rgba(197,160,80,0.25);
+  border-radius: var(--radius-sm);
+  background: rgba(197,160,80,0.05);
+  min-width: 90px;
+}
+
+.gpaValue {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1;
+}
+
+.gpaLabel {
+  font-family: var(--font-display);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+@media (max-width: 600px) {
+  .cardHeader { flex-direction: column; }
+  .gpaBox { align-self: flex-start; }
+}
