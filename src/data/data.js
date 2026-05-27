@@ -24,7 +24,7 @@ export const education = [
     institution: "J.B. Institute of Engineering and Technology",
     location: "India",
     year: "2020 – 2024",
-    gpa: "6.9 / 10",
+    gpa: "3/4",
     icon: "🏛️",
   },
 ];
