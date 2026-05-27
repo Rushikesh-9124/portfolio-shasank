@@ -61,10 +61,36 @@ export const projects = [
 
 export const skills = {
   "Programming Languages": ["Python"],
-  "Machine Learning": ["Supervised Learning", "Classification", "Model Evaluation"],
-  "Deep Learning": ["CNN", "Transfer Learning", "ResNet50", "VGG16"],
-  "Data Science": ["Data Analysis", "Feature Engineering", "EDA"],
-  NLP: ["TF-IDF", "NLTK", "Text Classification"],
+
+  "Machine Learning": [
+    "Supervised Learning",
+    "Classification",
+    "Model Evaluation",
+  ],
+
+  "Deep Learning": [
+    "CNN",
+    "Transfer Learning",
+    "ResNet50",
+    "VGG16",
+  ],
+
+  "Data Science": [
+    "Data Analysis",
+    "Feature Engineering",
+    "Exploratory Data Analysis (EDA)",
+    "ETL Pipelines",
+  ],
+
+  "NLP & Generative AI": [
+    "Generative AI",
+    "Retrieval-Augmented Generation (RAG)",
+    "Vector Databases",
+    "TF-IDF",
+    "NLTK",
+    "Text Classification",
+  ],
+
   "Libraries & Frameworks": [
     "TensorFlow",
     "Keras",
@@ -75,9 +101,22 @@ export const skills = {
     "Seaborn",
     "OpenCV",
   ],
+
   "Explainable AI": ["SHAP", "Grad-CAM"],
+
+  "Backend & Optimization": [
+    "Python Microservices",
+    "Workflow Automation",
+    "Model Inference Optimization",
+  ],
+
   Visualization: ["Chart.js", "Matplotlib"],
-  "Soft Skills": ["Communication", "Problem Solving", "Analytical Thinking"],
+
+  "Soft Skills": [
+    "Communication",
+    "Problem Solving",
+    "Analytical Thinking",
+  ],
 };
 
 export const navLinks = [
