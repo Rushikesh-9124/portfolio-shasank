@@ -1,41 +1,142 @@
 .footer {
-  border-top: 1px solid var(--border);
-  padding: 32px 0;
   position: relative;
-  z-index: 1;
+
+  padding: 40px 0;
+
+  margin-top: 40px;
 }
+
+/* TOP LINE */
+
+.topLine {
+  width: 100%;
+  height: 1px;
+
+  margin-bottom: 34px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.14),
+    transparent
+  );
+}
+
+/* INNER */
 
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+
+  gap: 30px;
+
   flex-wrap: wrap;
 }
 
-.ornamentRow {
+/* LEFT */
+
+.left {
   display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  color: white;
+}
+
+.role {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgba(255,255,255,0.52);
+}
+
+/* CENTER */
+
+.center {
+  text-align: center;
+}
+
+.copy {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgba(255,255,255,0.48);
+}
+
+/* RIGHT */
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+.built {
+  font-size: 13px;
+  font-weight: 500;
+
+  color: rgba(255,255,255,0.48);
+}
+
+/* STATUS */
+
+.status {
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  color: var(--gold-dim);
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  margin-bottom: 16px;
+
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 12px;
+  font-weight: 600;
+
+  color: rgba(255,255,255,0.72);
 }
 
-.ornamentRow::before, .ornamentRow::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
+.dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.9);
 }
 
-.copy, .built {
-  font-family: var(--font-display);
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
+/* MOBILE */
 
-.gold { color: var(--gold); }
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .left,
+  .right {
+    align-items: center;
+  }
+
+  .copy {
+    order: 3;
+  }
+}
