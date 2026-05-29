@@ -2,53 +2,111 @@ import { personal } from "../data/data";
 import styles from "./About.module.css";
 
 export default function About() {
+  const highlights = [
+    {
+      icon: "🤖",
+      title: "AI & Machine Learning",
+      desc: "Building scalable intelligent systems using modern ML pipelines",
+    },
+    {
+      icon: "🧠",
+      title: "LLMs & RAG Systems",
+      desc: "Optimizing generative AI workflows with vector databases",
+    },
+    {
+      icon: "⚡",
+      title: "Backend Engineering",
+      desc: "FastAPI microservices, ETL pipelines, and workflow automation",
+    },
+    {
+      icon: "📊",
+      title: "Data & Analytics",
+      desc: "EDA, feature engineering, distributed processing, and inference optimization",
+    },
+  ];
+
+  const info = [
+    { label: "Degree", value: "M.Sc Computer Science" },
+    { label: "University", value: "SE Missouri State" },
+    { label: "GPA", value: "3.9 / 4.0" },
+    { label: "Graduation", value: "2026" },
+    { label: "Focus", value: "AI / ML / NLP" },
+    { label: "Status", value: "Open to Work" },
+  ];
+
   return (
     <section id="about" className={styles.section}>
       <div className="container">
-        <p className="section-label">01 — About</p>
-        <h2 className="section-title">Driven by curiosity,<br />built on data.</h2>
+        <p className="section-label animate-fade-up delay-1">
+          About Me
+        </p>
+
+        <h2 className="section-title animate-fade-up delay-2">
+          Engineering intelligent
+          <br />
+          systems with modern AI.
+        </h2>
 
         <div className={styles.grid}>
+          
+          {/* LEFT */}
           <div className={styles.text}>
-            <p className={styles.lead}>{personal.about}</p>
+            <p className={`${styles.lead} animate-fade-up delay-3`}>
+              {personal.about}
+            </p>
+
             <div className={styles.highlights}>
-              {[
-                { icon: "🤖", title: "AI & Machine Learning", desc: "Building intelligent systems from data" },
-                { icon: "🔬", title: "Deep Learning", desc: "CNN, ResNet50, Transfer Learning" },
-                { icon: "💬", title: "Natural Language Processing", desc: "Text classification and language understanding" },
-                { icon: "📊", title: "Data Science", desc: "EDA, feature engineering, predictive modeling" },
-              ].map((h) => (
-                <div key={h.title} className={styles.highlightItem}>
-                  <span className={styles.highlightIcon}>{h.icon}</span>
+              {highlights.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={`${styles.highlightItem} animate-fade-up delay-${index + 2}`}
+                >
+                  <div className={styles.highlightIcon}>
+                    {item.icon}
+                  </div>
+
                   <div>
-                    <strong className={styles.highlightTitle}>{h.title}</strong>
-                    <span className={styles.highlightDesc}>{h.desc}</span>
+                    <h3 className={styles.highlightTitle}>
+                      {item.title}
+                    </h3>
+
+                    <p className={styles.highlightDesc}>
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className={styles.side}>
+          {/* RIGHT */}
+          <div className={`${styles.side} animate-fade-up delay-4`}>
             <div className={styles.infoCard}>
-              <h3 className={styles.infoTitle}>Quick Info</h3>
+              <div className={styles.cardGlow}></div>
+
+              <h3 className={styles.infoTitle}>
+                Quick Info
+              </h3>
+
               <ul className={styles.infoList}>
-                {[
-                  { label: "Degree", value: "M.Sc Computer Science" },
-                  { label: "University", value: "SE Missouri State" },
-                  { label: "GPA", value: "3.9 / 4.0" },
-                  { label: "Grad Year", value: "2026" },
-                  { label: "Focus", value: "AI / ML / NLP" },
-                  { label: "Status", value: "Open to work" },
-                ].map((i) => (
-                  <li key={i.label} className={styles.infoItem}>
-                    <span className={styles.infoLabel}>{i.label}</span>
-                    <span className={styles.infoValue}>{i.value}</span>
+                {info.map((item) => (
+                  <li
+                    key={item.label}
+                    className={styles.infoItem}
+                  >
+                    <span className={styles.infoLabel}>
+                      {item.label}
+                    </span>
+
+                    <span className={styles.infoValue}>
+                      {item.value}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+
         </div>
       </div>
     </section>
