@@ -1,77 +1,195 @@
+.section {
+  position: relative;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* GRID */
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 16px;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+
+  gap: 24px;
 }
+
+/* CARD */
 
 .skillCard {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  transition: border-color 0.3s, transform 0.3s;
   position: relative;
-  overflow: hidden;
-}
 
-.skillCard::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
-  opacity: 0;
-  transition: opacity 0.4s;
+  padding: 28px;
+
+  border-radius: 26px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.16);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,0.14),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
 .skillCard:hover {
-  border-color: rgba(197,160,80,0.3);
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+
+  background: rgba(255,255,255,0.12);
+
+  border-color: rgba(255,255,255,0.24);
 }
-.skillCard:hover::after { opacity: 1; }
+
+/* GLOW */
+
+.cardGlow {
+  position: absolute;
+
+  top: -70px;
+  right: -70px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.06);
+
+  filter: blur(55px);
+
+  pointer-events: none;
+}
+
+/* HEADER */
 
 .categoryHeader {
+  position: relative;
+
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid var(--border);
+
+  gap: 12px;
+
+  margin-bottom: 22px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+/* DOT */
+
 .dot {
-  width: 5px;
-  height: 5px;
+  width: 8px;
+  height: 8px;
+
   border-radius: 50%;
-  background: var(--gold);
+
+  background: rgba(255,255,255,0.9);
+
   flex-shrink: 0;
 }
 
+/* CATEGORY */
+
 .categoryName {
-  font-family: var(--font-display);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 14px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--gold-light);
+
+  color: white;
 }
 
-.tags { display: flex; flex-wrap: wrap; gap: 7px; }
+/* TAGS */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+/* TAG */
 
 .tag {
-  font-family: var(--font-display);
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  background: rgba(197,160,80,0.03);
-  border: 1px solid var(--border);
-  padding: 5px 11px;
-  border-radius: var(--radius-sm);
-  transition: color 0.3s, border-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.08);
+
+  border: 1px solid rgba(255,255,255,0.14);
+
+  color: rgba(255,255,255,0.72);
+
+  font-size: 12px;
+  font-weight: 500;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.skillCard:hover .tag {
-  color: var(--gold);
-  border-color: rgba(197,160,80,0.2);
+.tag:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255,255,255,0.14);
+
+  border-color: rgba(255,255,255,0.22);
+
+  color: white;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(260px, 1fr)
+    );
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCard {
+    padding: 24px 20px;
+  }
+
+  .categoryName {
+    font-size: 13px;
+  }
+
+  .tag {
+    font-size: 11px;
+
+    padding: 8px 12px;
+  }
 }
